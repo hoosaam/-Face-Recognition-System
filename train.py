@@ -44,7 +44,7 @@ print("_____________________________(:-----------:)___________________________")
 
 features =np.array(features,dtype='object')
 labels=np.array(labels)
-face_recognizer = cv.face_LBPHFaceRecognizer.create()
+face_recognizer = cv.face_LBPHFaceRecognizer_create()
 face_recognizer.train(features,labels)
 face_recognizer.save('face_train.yml')
 np.save('feature.npy',features)

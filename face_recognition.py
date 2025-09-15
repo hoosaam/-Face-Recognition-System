@@ -2,17 +2,17 @@ import cv2 as cv
 import numpy as np 
 
 # Load Haar Cascade
-haar_cascade = cv.CascadeClassifier(cv.data.haarcascades + 'haarcascade_frontalface_alt.xml')
+haar_cascade = cv.CascadeClassifier('haarcascade_frontalface_alt.xml')
 
 # Labels
 people = ["Elon", "Jeff Bezos", "Ronaldo", "Salah"]
 
 # Load trained model
-face_recognizer = cv.face_LBPHFaceRecognizer_create()
+face_recognizer = cv.face_LBPHFaceRecognizer.create()
 face_recognizer.read('face_train.yml')
 
 # Load image
-img = cv.imread(r'D:\SVU Rasing Team\Task 3 == Face Reco\-Face-Recognition-System\valua\22.jpeg')
+img = cv.imread( r'D:\SVU Rasing Team\Task 3 == Face Reco\-Face-Recognition-System\valua\22.jpeg')
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
 # Detect faces
