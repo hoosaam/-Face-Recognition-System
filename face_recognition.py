@@ -1,6 +1,7 @@
 import cv2 as cv
 import numpy as np 
-
+import os
+import random
 # Load Haar Cascade
 haar_cascade = cv.CascadeClassifier('haarcascade_frontalface_alt.xml')
 
@@ -12,7 +13,10 @@ face_recognizer = cv.face_LBPHFaceRecognizer.create()
 face_recognizer.read('face_train.yml')
 
 # Load image
-img = cv.imread( r'D:\SVU Rasing Team\Task 3 == Face Reco\-Face-Recognition-System\valua\22.jpeg')
+folder = r'D:\SVU Rasing Team\Task 3 == Face Reco\-Face-Recognition-System\valua'
+img_name = random.choice(os.listdir(folder))
+img_path = os.path.join(folder, img_name)
+img = cv.imread(img_path)
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
 # Detect faces
