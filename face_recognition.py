@@ -2,6 +2,7 @@ import cv2 as cv
 import numpy as np 
 import os
 import random
+print("HI")
 # Load Haar Cascade
 haar_cascade = cv.CascadeClassifier('haarcascade_frontalface_alt.xml')
 
